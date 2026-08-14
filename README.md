@@ -136,4 +136,4 @@ scripts/seed.ts    # seed runner (getPlatformProxy + Drizzle)
 
 ---
 
-*Made with care in Kerala.*
+*Made with care in Kuthuparamba.*
