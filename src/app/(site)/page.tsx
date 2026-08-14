@@ -81,8 +81,46 @@ export default async function HomePage() {
   const visible = (type: string) =>
     sections.length === 0 || sections.some((s) => s.sectionType === type);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "PetStore"],
+    "name": storeName,
+    "image": `${SITE.url}/og.jpg`,
+    "telephone": whatsapp,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Near Eye Hospital",
+      "addressLocality": "Kuthuparamba",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.8286,
+      "longitude": 75.5670
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         storeName={storeName}
         tagline={tagline}

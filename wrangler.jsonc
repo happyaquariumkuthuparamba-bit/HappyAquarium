@@ -15,7 +15,7 @@
     {
       "binding": "DB",
       "database_name": "happy-aquarium-db",
-      "database_id": "dde8bfea-fd4a-408e-a1d8-634f73c7b97f",
+      "database_id": "7f57941a-0f58-4ca7-bf07-38c125a8c7c8",
       "migrations_dir": "drizzle/migrations"
     }
   ]
