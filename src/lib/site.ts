@@ -14,7 +14,12 @@ export const SITE = {
   city: "Kannur",
   state: "Kerala",
   pincode: "670643",
-  url: "https://happyaquarium.in",
+  url: "https://happyaquarium.store",
+} as const;
+
+export const SITE_SOCIALS = {
+  instagram: "https://www.instagram.com/happy_aquarium_kuthuparamba_",
+  googleReview: "https://g.page/r/CcofhAyFywNVEBM/review",
 } as const;
 
 export const WHATSAPP_DEFAULT_MSG =

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { whatsappHref } from "@/lib/utils";
+import { SITE_SOCIALS } from "@/lib/site";
 
 function IgIcon() {
   return (
@@ -22,6 +23,14 @@ function YtIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
       <path d="M21.6 7.2s-.2-1.4-.8-2c-.75-.8-1.6-.8-2-.85C16 4.1 12 4.1 12 4.1h-.02s-4 0-6.8.25c-.4.05-1.25.05-2 .85-.6.6-.8 2-.8 2S2.1 8.8 2.1 10.5v1.6c0 1.65.2 3.3.2 3.3s.2 1.4.8 2c.75.8 1.75.75 2.2.85 1.6.15 6.7.2 6.7.2s4 0 6.8-.25c.4-.05 1.25-.05 2-.85.6-.6.8-2 .8-2s.2-1.65.2-3.3v-1.6c0-1.65-.2-3.3-.2-3.3zM9.9 14.6V9.2l5.15 2.7-5.15 2.7z" />
+    </svg>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+      <path d="M21.8 10.2H12v3.8h5.6c-.5 2.5-2.7 4-5.6 4-3.3 0-6-2.7-6-6s2.7-6 6-6c1.5 0 2.8.5 3.8 1.4l2.8-2.8C16.7 2.9 14.5 2 12 2 6.5 2 2 6.5 2 12s4.5 10 10 10c5.5 0 9.7-3.9 9.7-9.7 0-.7-.1-1.4-.2-2.1z"/>
     </svg>
   );
 }
@@ -52,9 +61,10 @@ export default function Footer(p: FooterProps) {
           <span className="font-display text-2xl font-semibold text-paper">{p.storeName}</span>
           {p.tagline && <p className="mt-3 text-sm text-paper/60">{p.tagline}</p>}
           <div className="mt-6 flex gap-3">
-            {p.socials?.instagram && <a href={p.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={socialCls}><IgIcon /></a>}
+            <a href={p.socials?.instagram ?? SITE_SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={socialCls}><IgIcon /></a>
             {p.socials?.facebook && <a href={p.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={socialCls}><FbIcon /></a>}
             {p.socials?.youtube && <a href={p.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={socialCls}><YtIcon /></a>}
+            <a href={SITE_SOCIALS.googleReview} target="_blank" rel="noopener noreferrer" aria-label="Leave a Google Review" className={socialCls}><GoogleIcon /></a>
           </div>
         </div>
 
