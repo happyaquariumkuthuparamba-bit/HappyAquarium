@@ -4,7 +4,7 @@
  * runtime (Auth). Format: pbkdf2$<iterations>$<saltB64>$<hashB64>
  */
 
-const ITERATIONS = 100_000;
+const ITERATIONS = 1000;
 const KEYLEN = 32;
 
 function toB64(buf: ArrayBuffer): string {
