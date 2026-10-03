@@ -29,24 +29,26 @@ export type ProductCard = s.Product & {
   categorySlug: string | null;
 };
 
+import { cache } from "react";
+
 /* -------------------------------------------------------------------------- */
 /*  Settings / navigation / homepage                                          */
 /* -------------------------------------------------------------------------- */
 
-export async function getSiteSettings() {
+export const getSiteSettings = cache(async () => {
   const db = getDb();
   const [row] = await db.select().from(s.siteSettings).limit(1);
   return row ?? null;
-}
+});
 
-export async function getNav(location: (typeof s.NAV_LOCATIONS)[number]) {
+export const getNav = cache(async (location: (typeof s.NAV_LOCATIONS)[number]) => {
   const db = getDb();
   return db
     .select()
     .from(s.navItems)
     .where(and(eq(s.navItems.location, location), eq(s.navItems.published, true)))
     .orderBy(asc(s.navItems.sortOrder));
-}
+});
 
 export async function getHomepageSections() {
   const db = getDb();

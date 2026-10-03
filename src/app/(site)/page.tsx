@@ -12,6 +12,7 @@ import Testimonials from "@/components/home/Testimonials";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import Newsletter from "@/components/home/Newsletter";
 import InstagramFeed from "@/components/home/InstagramFeed";
+import AboutSection from "@/components/home/AboutSection";
 import { Container } from "@/components/ui/primitives";
 import { SITE } from "@/lib/site";
 import {
@@ -127,6 +128,8 @@ export default async function HomePage() {
         badges={badges}
         whatsapp={whatsapp}
       />
+
+      <AboutSection />
 
       {visible("featured_fish") && (
         <FishRail
