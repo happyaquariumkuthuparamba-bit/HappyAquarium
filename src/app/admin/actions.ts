@@ -123,6 +123,7 @@ export async function saveFish(formData: FormData): Promise<void> {
     offerPrice: num(formData, "offerPrice"),
     stock: num(formData, "stock") ?? 0,
     availability: (str(formData, "availability") ?? "available") as never,
+    rateType: (str(formData, "rateType") ?? "pair") as never,
     heroImage: str(formData, "heroImage"),
     gallery: lines(formData, "gallery"),
     video: str(formData, "video"),

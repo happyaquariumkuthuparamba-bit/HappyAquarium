@@ -6,7 +6,7 @@ import {
 } from "@/lib/admin";
 import { saveFish } from "@/app/admin/actions";
 import {
-  DIFFICULTY_LEVELS, AGGRESSION_LEVELS, WATER_TYPES, AVAILABILITY,
+  DIFFICULTY_LEVELS, AGGRESSION_LEVELS, WATER_TYPES, AVAILABILITY, RATE_TYPES
 } from "@/db/schema";
 import ImageField from "@/components/admin/ImageField";
 import VariantPicker from "@/components/admin/VariantPicker";
@@ -113,9 +113,14 @@ export default async function FishForm({
 
         <section className="rounded-2xl glass p-5">
           <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-aqua">Pricing & stock</h2>
-          <div className="grid gap-4 sm:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-5">
             <Field label="Price (₹)"><input name="price" type="number" step="1" defaultValue={f?.price ?? ""} className={inputCls} /></Field>
             <Field label="Offer price (₹)"><input name="offerPrice" type="number" step="1" defaultValue={f?.offerPrice ?? ""} className={inputCls} /></Field>
+            <Field label="Rate Type">
+              <select name="rateType" defaultValue={f?.rateType ?? "pair"} className={inputCls}>
+                {RATE_TYPES.map((r) => <option key={r} value={r}>{r === "single" ? "Per Fish" : "Per Pair"}</option>)}
+              </select>
+            </Field>
             <Field label="Stock"><input name="stock" type="number" defaultValue={f?.stock ?? 0} className={inputCls} /></Field>
             <Field label="Availability">
               <select name="availability" defaultValue={f?.availability ?? "available"} className={inputCls}>
