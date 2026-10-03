@@ -5,7 +5,7 @@ import CustomQuoteForm from "@/components/tools/CustomQuoteForm";
 import { getPlannerPresets, getAllFishLite, getTankPricing } from "@/lib/queries";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Aquarium Planner",

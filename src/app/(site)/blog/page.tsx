@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { getBlogPosts, getCategories } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Fish Care Blog & Guides",

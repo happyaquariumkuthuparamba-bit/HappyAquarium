@@ -19,7 +19,7 @@ import {
 } from "@/lib/utils";
 import { SITE, reserveMsg, fishEnquiryMsg } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export async function generateMetadata({
   params,

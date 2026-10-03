@@ -29,7 +29,7 @@ import {
   getBlogPosts,
 } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300; // Re-render at most every 5 minutes
 
 export default async function HomePage() {
   const [

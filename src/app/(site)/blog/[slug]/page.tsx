@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Markdown } from "@/components/blog/Markdown";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export async function generateMetadata({
   params,

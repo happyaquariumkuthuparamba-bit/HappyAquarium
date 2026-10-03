@@ -8,7 +8,7 @@ import FishFilters from "@/components/fish/FishFilters";
 import { getFishList, getCategories, getSiteSettings } from "@/lib/queries";
 import { SITE } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Aquarium Fish Collection",
