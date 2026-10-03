@@ -5,7 +5,7 @@ import { GalleryLightbox } from "@/components/gallery/GalleryLightbox";
 import InstagramFeed from "@/components/home/InstagramFeed";
 import { getGallery, getSiteSettings } from "@/lib/queries";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Aquarium Gallery",

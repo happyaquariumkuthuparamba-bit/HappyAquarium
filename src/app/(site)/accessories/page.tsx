@@ -7,7 +7,7 @@ import { ProductCard } from "@/components/cards/ProductCard";
 import { getProductList, getCategories, getSiteSettings } from "@/lib/queries";
 import { SITE } from "@/lib/site";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Aquarium Accessories & Supplies",
